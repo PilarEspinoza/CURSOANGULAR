@@ -1,0 +1,14 @@
+<mat-toolbar class="navbar" color="primary">
+    <div class="container-fluid">
+        <span> VIAMATICA S.A </span>
+        <form class="d-flex">
+            <button (click)="logout()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+            <mat-icon>logout</mat-icon>
+        </button>
+        </form>
+    </div>
+</mat-toolbar>
+
+<div class="col mt-2">
+    <router-outlet></router-outlet>
+</div>

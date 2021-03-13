@@ -1,0 +1,28 @@
+<mat-card>
+    <mat-card-content>
+        <div class="row">
+            <div class="col-10">
+                <mat-card-title>
+                    <div class="row">
+                        <div class="col-2">
+                            <mat-icon color="primary"> person</mat-icon>
+                        </div>
+                        <div class="col text-truncate">
+                            {{cliente.nombres | titlecase }} {{ cliente.apellidos | titlecase }}
+                        </div>
+                    </div>
+                </mat-card-title>
+            </div>
+            <div ngbDropdown class="col-2 text-left">
+                <mat-icon ngbDropdownToggle style="cursor: pointer;">drag_indicator</mat-icon>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                    <button ngbDropdownItem (click)="irAEditar(cliente)">Editar</button>
+                    <button ngbDropdownItem (click)="irACambiarE(cliente)">Cambiar Estado</button>
+                </div>
+            </div>
+        </div>
+        <mat-card-subtitle> {{cliente.correo | lowercase }} | {{cliente.celular}} </mat-card-subtitle>
+        <p class="card-text text-justify">{{cliente.direccion | titlecase }} </p>
+        <span>Estado: {{cliente.estado  | estadoPipe }} </span>
+    </mat-card-content>
+</mat-card>
